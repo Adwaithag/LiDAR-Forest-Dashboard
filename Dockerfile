@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install required R packages (single line)
-RUN R -e "install.packages(c('shiny','shinydashboard','httr2','data.table','dplyr','ggplot2','leaflet','sf','lidR','rlas'), repos='https://cloud.r-project.org/')"
+RUN R -e "install.packages(c('shiny','shinydashboard','httr2','data.table','dplyr','ggplot2','leaflet','sf','lidR','rlas','plotly'), repos='https://cloud.r-project.org/')"
 
 # Copy your app files
 COPY . /srv/shiny-server/
