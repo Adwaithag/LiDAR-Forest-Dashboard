@@ -22,7 +22,7 @@ header{
     color:white;
     padding:20px;
     text-align:center;
-    font-size:28px;
+    font-size:32px;
     font-weight:bold;
 }
 
@@ -49,6 +49,7 @@ iframe{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
+    margin-bottom:20px;
 }
 
 .statbox{
@@ -64,7 +65,19 @@ iframe{
     font-size:40px;
 }
 
+img{
+    width:100%;
+    border-radius:12px;
+}
+
+a{
+    color:#14532d;
+    font-weight:bold;
+    text-decoration:none;
+}
+
 </style>
+
 </head>
 
 <body>
@@ -84,7 +97,7 @@ Forest LiDAR Monitoring Dashboard
 
 <div class="statbox">
 <h2>GeoSLAM</h2>
-<p>LiDAR System</p>
+<p>Handheld LiDAR</p>
 </div>
 
 <div class="statbox">
@@ -95,22 +108,28 @@ Forest LiDAR Monitoring Dashboard
 </div>
 
 <div class="card">
+
 <h2>Project Overview</h2>
 
 <p>
-This dashboard presents handheld LiDAR-derived forest structure analysis including 3D point cloud visualization, canopy assessment, and forest monitoring outputs.
+This dashboard presents handheld LiDAR-derived forest structure analysis including canopy assessment, tree height estimation, and interactive 3D forest visualization.
 </p>
 
 </div>
 
 <div class="card">
+
 <h2>Interactive 3D Forest Viewer</h2>
+
+<iframe src="potree/viewer.html"></iframe>
+
+</div>
+
 <div class="card">
 
 <h2>Canopy Height Model</h2>
 
-<img src="assets/images/chm.png"
-style="width:100%; border-radius:12px;">
+<img src="assets/images/chm.png">
 
 </div>
 
@@ -118,8 +137,7 @@ style="width:100%; border-radius:12px;">
 
 <h2>Tree Height Distribution</h2>
 
-<img src="assets/graphs/tree_heights.png"
-style="width:100%; border-radius:12px;">
+<img src="assets/graphs/tree_heights.png">
 
 </div>
 
@@ -141,21 +159,13 @@ Download LiDAR LAZ File
 </a>
 </li>
 
-<li>
-<a href="assets/reports/report.pdf">
-Download Report
-</a>
-</li>
-
 </ul>
-
-</div>
-<iframe src="potree/viewer.html"></iframe>
 
 </div>
 
 <div class="card">
-<h2>Forest Analysis</h2>
+
+<h2>Forest Structure Graph</h2>
 
 <div id="plot"></div>
 
@@ -176,4 +186,3 @@ Plotly.newPlot('plot', data);
 
 </body>
 </html>
-
