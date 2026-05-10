@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forest LiDAR Dashboard</title>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f6f9;
+}
+
+header{
+    background:#14532d;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.container{
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+iframe{
+    width:100%;
+    height:700px;
+    border:none;
+    border-radius:12px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.statbox{
+    background:#166534;
+    color:white;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.statbox h2{
+    margin:0;
+    font-size:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+Forest LiDAR Monitoring Dashboard
+</header>
+
+<div class="container">
+
+<div class="stats">
+
+<div class="statbox">
+<h2>1 Ha</h2>
+<p>Forest Plot Area</p>
+</div>
+
+<div class="statbox">
+<h2>GeoSLAM</h2>
+<p>LiDAR System</p>
+</div>
+
+<div class="statbox">
+<h2>3D</h2>
+<p>Forest Visualization</p>
+</div>
+
+</div>
+
+<div class="card">
+<h2>Project Overview</h2>
+
+<p>
+This dashboard presents handheld LiDAR-derived forest structure analysis including 3D point cloud visualization, canopy assessment, and forest monitoring outputs.
+</p>
+
+</div>
+
+<div class="card">
+<h2>Interactive 3D Forest Viewer</h2>
+
+<iframe src="potree/viewer.html"></iframe>
+
+</div>
+
+<div class="card">
+<h2>Forest Analysis</h2>
+
+<div id="plot"></div>
+
+</div>
+
+</div>
+
+<script>
+
+var data = [{
+  x: [5,10,15,20,25,30],
+  type: 'histogram'
+}];
+
+Plotly.newPlot('plot', data);
+
+</script>
+
+</body>
+</html>
